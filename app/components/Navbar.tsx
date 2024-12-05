@@ -2,9 +2,13 @@ import { useState } from "react";
 import { Link } from "@remix-run/react";
 import LoginModal from "./LoginModal";
 import { BsCart } from "react-icons/bs";
+import useStore from "~/utils/store";
+import CartProductsDrawer from "./CartProductsDrawer";
 
 const Navbar = () => {
+  const { cart } = useStore()
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [isDrawerOpen, setIsDrawerOpen] = useState(false);
 
   const onClickHandler = () => {
     console.log("-------trigger")
@@ -29,9 +33,12 @@ const Navbar = () => {
           >
             Login/Register
           </div>
-          <div className="relative bg-slate-200 w-12 h-12 p-1 rounded-full shadow-md flex items-center justify-center">
+          <div
+            onClick={() => setIsDrawerOpen(true)}
+            className="relative bg-slate-200 w-12 h-12 p-1 rounded-full shadow-md flex items-center justify-center cursor-pointer"
+          >
             <BsCart size={24} />
-            <span className="bg-red-500 rounded-full w-6 h-6 absolute top-0 -right-2 text-white flex items-center justify-center">2</span>
+            <span className="bg-red-500 rounded-full w-6 h-6 absolute top-0 -right-2 text-white flex items-center justify-center">{cart.length}</span>
           </div>
         </div>
       </div>
@@ -40,6 +47,12 @@ const Navbar = () => {
         <LoginModal
           isOpen={isModalOpen}
           setIsOpen={setIsModalOpen}
+        />
+      )}
+      {isDrawerOpen && (
+        <CartProductsDrawer
+          isOpen={isDrawerOpen}
+          setIsOpen={setIsDrawerOpen}
         />
       )}
     </>

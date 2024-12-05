@@ -6,7 +6,6 @@ interface Props {
 }
 
 const LoginModal = ({ isOpen, setIsOpen }: Props) => {
-  console.log("🚀 ~ LoginModal ~ isOpen:", isOpen)
   const [form] = Form.useForm();
 
   const onSubmitHandler = (values: any) => {
@@ -22,6 +21,7 @@ const LoginModal = ({ isOpen, setIsOpen }: Props) => {
       centered
     >
       <div>
+        <div className="mb-4 text-slate-400">Welcome Back!</div>
         <Form
           form={form}
           onFinish={onSubmitHandler}
