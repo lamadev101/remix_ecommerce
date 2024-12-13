@@ -1,5 +1,6 @@
-import { Link } from "@remix-run/react"
 import { BsCart, BsHeart } from "react-icons/bs"
+
+import { Link } from "@remix-run/react"
 import useCarts from "~/hooks/useCarts"
 
 const Productcard = (product: Product) => {
@@ -12,7 +13,7 @@ const Productcard = (product: Product) => {
         alt={product.title}
         className="h-80 w-full object-contain"
       />
-      <span className="absolute top-0 right-0 bg-slate-600 text-white px-4 shadow-md ">{product.category}</span>
+      <span className="absolute top-0 right-0 bg-red-400 text-white px-4 shadow-md ">{product.category}</span>
 
       <div className="text-black px-2 py-3">
         <Link to={`/product-details/${product.id}`}>

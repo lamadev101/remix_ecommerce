@@ -1,6 +1,5 @@
 import { type MetaFunction } from "@remix-run/node";
 import { json, useLoaderData } from "@remix-run/react";
-import CarouselBanner from "~/components/CarouselBanner";
 import OfferProducts from "~/components/OfferProducts";
 import ProductList from "~/components/ProductList";
 import { fetchData } from "~/utils/helpers/fetchData";
@@ -24,7 +23,7 @@ export default function Index() {
   return (
     <main>
       <OfferProducts products={categoryProducts} />
-      {/* {categoryProducts?.length > 0 && <CarouselBanner products={categoryProducts} />} */}
+      <div></div>
       <ProductList products={products} />
     </main>
   );

@@ -4,8 +4,6 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
 const CarouselBanner = ({ products }: { products: Products }) => {
-  console.log("🚀 ~ CarouselBanner ~ products:", products)
-
   if (products?.length < 0) {
     return null
   }
