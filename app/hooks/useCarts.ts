@@ -1,3 +1,4 @@
+import { message } from "antd";
 import useStore from "~/utils/store";
 
 export default function useCarts() {
@@ -13,6 +14,7 @@ export default function useCarts() {
       image: product.image,
     };
     addToCart(cartItem);
+    message.success("Product added into cart.")
   };
 
   return { cart, addToCartHandler };

@@ -10,6 +10,7 @@ declare interface Product {
     rate: number,
   }
 }
+declare type Products = Product[]
 declare type Categories = string[]
 
 declare interface CartProduct {
